@@ -12,7 +12,7 @@ export const AppDataSource = new DataSource({
   username: process.env.DB_USERNAME || 'postgres',
   password: process.env.DB_PASSWORD || 'password123',
   database: process.env.DB_DATABASE || 'nodejs_api',
-  synchronize: process.env.NODE_ENV === 'development',
+  synchronize: false, // process.env.NODE_ENV === 'development',
   logging: process.env.NODE_ENV === 'development',
   entities: [User, Post],
   migrations: ['src/migrations/*.ts'],
